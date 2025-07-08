@@ -11,9 +11,10 @@ export default async function Home() {
 
 
 const [collectionRes, veinsRes] = await Promise.all([
- fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/exoticCollection`),
-  fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/veins`)
+  fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/exoticCollection`, { cache: "no-store" }),
+  fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/veins`, { cache: "no-store" })
 ]);
+
 
 
   const exoticCollection = await collectionRes.json();
