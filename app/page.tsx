@@ -8,10 +8,13 @@ import Resource from "@/components/resources/Resource";
 import Veins from "@/components/veins/Veins";
 
 export default async function Home() {
-  const [collectionRes, veinsRes] = await Promise.all([
-    fetch("http://localhost:3000/api/exoticCollection", { cache: "no-store" }),
-    fetch("http://localhost:3000/api/veins", { cache: "no-store" }),
-  ]);
+const baseURL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+
+const [collectionRes, veinsRes] = await Promise.all([
+  fetch(`${baseURL}/api/exoticCollection`, { cache: "no-store" }),
+  fetch(`${baseURL}/api/veins`, { cache: "no-store" }),
+]);
+
 
   const exoticCollection = await collectionRes.json();
   const veins = await veinsRes.json();
