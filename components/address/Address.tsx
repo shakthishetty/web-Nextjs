@@ -8,9 +8,10 @@ const Address = () => {
       <div className="flex flex-col gap-6 max-w-xl">
         <div>
           <h1 className="text-3xl font-bold text-gray-800 mb-1">Get touch with us</h1>
-          <p className="text-gray-500 text-sm">
-            Tell us about your vision, and we'll help bring it to life.
-          </p>
+         <p className="text-gray-500 text-sm">
+  Tell us about your vision, and we&apos;ll help bring it to life.
+</p>
+
         </div>
 
         <div>
